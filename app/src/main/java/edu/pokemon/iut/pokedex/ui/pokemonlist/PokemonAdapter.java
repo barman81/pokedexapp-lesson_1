@@ -54,9 +54,12 @@ public class PokemonAdapter extends RecyclerView.Adapter<PokemonAdapter.ViewHold
 
         // TODO 5) RECUPERER VIA LE HOLDER LA TEXTVIEW
         TextView txvtiew = holder.pokemonName;
+        ImageView pokemonImg = holder.pokemonImage;
 
         // TODO 6) INSERER LE NOM DU POKEMON DANS LA TEXTVIEW
+        String urlImage = pokemon.getSpritesString();
         txvtiew.setText(pokemon.getName());
+        Glide.with(context).load(urlImage).into(pokemonImg);
     }
 
     @Override
